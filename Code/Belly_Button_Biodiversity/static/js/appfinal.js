@@ -10,12 +10,20 @@ function buildMetadata(sample) {
       var complexData = [metaData]
   
       // Grab values from the data json object to build the plots
-      d3.select("sample-metadata").selectAll()
+      d3.select("#sample-metadata").selectAll("div")
         .data(complexData)
         .enter()
         .append("h6")
         .html(function(d) {
-          return `${d.AGE}`;
+          return `<h6>Sample: ${d.sample}</h6>
+          <h6>Age: ${d.AGE}</h6>
+          <h6>BBType: ${d.BBTYPE}</h6>
+          <h6>Ethicity: ${d.ETHNICITY}</h6>
+          <h6>Gender: ${d.GENDER}</h6>
+          <h6>Location: ${d.LOCATION}</h6>
+          <h6>WFREQ: ${d.WFREQ}</h6>         
+          
+          `;
         });
 
     
