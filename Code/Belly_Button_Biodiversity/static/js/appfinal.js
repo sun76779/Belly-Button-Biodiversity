@@ -55,7 +55,7 @@ function buildPie() {
     }];
 
     var layout = {
-      title: `Sample 940 MetaData Chart`,
+      title: `<b>Sample 940 MetaData Chart</b>`,
     };
 
     Plotly.newPlot("pie", data, layout);
@@ -87,6 +87,7 @@ function buildBubble() {
       mode: 'markers',
       marker: {
         size: value_all,
+        color: otu_ids_all,
         colorscale: [
           ['0.0', 'rgb(165,0,38)'],
           ['0.111111111111', 'rgb(215,48,39)'],
@@ -105,6 +106,7 @@ function buildBubble() {
     var bubblelayout = {
       margin: { t: 0 },
       hovermode: 'closest',
+      title: `<b>Sample 940 MetaData Chart</b>`,
     };
 
     Plotly.newPlot("bubble", bubbledata, bubblelayout);
