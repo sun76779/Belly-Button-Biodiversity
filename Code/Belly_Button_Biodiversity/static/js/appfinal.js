@@ -7,18 +7,15 @@ function buildMetadata(sample) {
     d3.json(panelurl).then(function(metaData) {
   
       console.log(metaData);
+      var complexData = [metaData]
   
       // Grab values from the data json object to build the plots
-      var age = data.age;
-      var bbtype = data.BBTYPE;
-
-      d3.select(".panel-body")
-        .selectAll("tr")
-        .data(metaData)
+      d3.select("sample-metadata").selectAll()
+        .data(complexData)
         .enter()
-        .append("tr")
+        .append("h6")
         .html(function(d) {
-          return `<td>${d.age}</td><td>${d.bbtype}</td>`;
+          return `${d.AGE}`;
         });
 
     
